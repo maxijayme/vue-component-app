@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import NavBar from '@/shared/components/NavBar.vue'
-import { routerLinks } from './router/links-routes';
+import { routeLinks } from './router/links-routes';
 
 </script>
 
 <template>
   <header>
-    <NavBar title="Pokémon APP" :links="routerLinks" />
+    <NavBar title="Pokémon APP" :links="routeLinks" />
   </header>
 
   <RouterView />

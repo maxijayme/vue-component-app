@@ -4,7 +4,7 @@ export interface RouterLinks {
   title: string
 }
 
-export const routerLinks: RouterLinks[] = [
+export const routeLinks: RouterLinks[] = [
   {
     name: 'home',
     path: '/',

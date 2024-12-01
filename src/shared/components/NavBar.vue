@@ -4,20 +4,26 @@ import type { RouterLinks } from '@/router/links-routes';
 
 interface Props  {
   title?: string,
-  links: Array<RouterLinks>
+  links: Array<RouterLinks>,
+  isSecondary?: boolean
 }
 
 withDefaults(
   defineProps<Props>(),
-  {title:'CompoApp'}
+  {
+    title:'CompoApp',
+    isSecondary: false
+  }
 )
 
 </script>
 
 <template>
 <nav>
-  <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="25" height="25" />
-  <span>{{ title }}</span>
+  <template v-if="!isSecondary">
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="25" height="25" />
+    <span>{{ title }}</span>
+  </template>
   <RouterLink
     v-for="(route, index) in links"
     :key="index"
