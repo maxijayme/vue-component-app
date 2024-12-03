@@ -16,7 +16,6 @@ const routeLinks:RouterLinks[] = pokemonRoute.children?.map((route) => (
 <template>
   <NavBar :links="routeLinks" is-secondary/>
   <div>
-    <h4>Pokemon Layout</h4>
     <RouterView />
   </div>
 </template>

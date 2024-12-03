@@ -1,5 +1,8 @@
-<script setup lang="ts">
+<script lang="ts">
+import { getPokemons } from '../helpers/get-pokemons';
 
+
+getPokemons().then(console.log)
 </script>
 
 <template>
