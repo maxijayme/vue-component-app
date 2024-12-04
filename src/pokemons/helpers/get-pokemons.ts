@@ -4,7 +4,7 @@ import type { PokemonsResponse, Pokemon, PokemonListResponse } from "../interfac
 
 export const getPokemons = async():Promise<Pokemon[]> => {
 
-  const {data} = await pokemonApi.get<PokemonListResponse>('/pokemon?limit10')
+  const {data} = await pokemonApi.get<PokemonListResponse>('/pokemon')
   const PokemonsPromises: Promise<Pokemon>[] = []
   for (const {url} of data.results) {
     const pokemonPromise = axios.get<PokemonsResponse>(url).then( ({data}) => {
