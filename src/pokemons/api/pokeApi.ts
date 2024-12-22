@@ -4,6 +4,6 @@ const pokemonApi = axios.create({
   baseURL: "https://pokeapi.co/api/v2",
 })
 
-pokemonApi.get('/pokemon?limit10')
+pokemonApi.get('/pokemon')
 
 export default pokemonApi;
