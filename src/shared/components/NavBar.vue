@@ -7,7 +7,7 @@ interface Props  {
   title?: string,
   links: Array<RouterLinks>,
   isSecondary?: boolean,
-  visible: boolean
+  visible?: boolean
 }
 
 const props = withDefaults(

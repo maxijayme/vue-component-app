@@ -3,7 +3,8 @@ import { usePokemons } from '../composables/usePokemons';
 import PokemonCardList from '@/pokemons/components/PokemonCardList.vue';
 
 const props = defineProps<{
-  title: string
+  title: string,
+  visible?: boolean
 }>()
 
 const { pokemons, isLoading, count, error, isError } = usePokemons()
