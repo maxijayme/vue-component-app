@@ -2,27 +2,32 @@ export interface RouterLinks {
   name: string
   path: string
   title: string
+  visible: boolean
 }
 
 export const routeLinks: RouterLinks[] = [
   {
     name: 'home',
     path: '/',
-    title: 'Home'
+    title: 'Home',
+    visible: true
   },
   {
     name: 'about',
     path: '/about',
-    title: 'About'
+    title: 'About',
+    visible: true
   },
   {
     name: 'counter',
     path: '/counter',
-    title: 'Counter'
+    title: 'Counter',
+    visible: true
   },
   {
     name: 'pokemons',
     path: '/pokemons',
-    title: 'Pokémons'
+    title: 'Pokémons',
+    visible: true
   }
 ]

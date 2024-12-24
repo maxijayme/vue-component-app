@@ -10,7 +10,8 @@ export const pokemonRoute:RouteRecordRaw = {
       name: 'pokemon-id',
       path: `/${ ROUTE_NAME }/by/:id?`,
       props: {
-        title: 'Pokémon por ID'
+        title: 'Pokémon por ID',
+        visible: false
       },
       component: () => import('@/pokemons/pages/PokemonById.vue')
     },
@@ -18,7 +19,8 @@ export const pokemonRoute:RouteRecordRaw = {
       name: 'pokemon-list',
       path: `/${ROUTE_NAME}/list`,
       props: {
-        title: 'Listado'
+        title: 'Listado',
+        visible: true
       },
       component: () => import('@/pokemons/pages/PokemonList.vue')
     },
@@ -26,7 +28,8 @@ export const pokemonRoute:RouteRecordRaw = {
       name: 'pokemon-list-native',
       path: `/${ROUTE_NAME}/list-native`,
       props: {
-        title: 'Listado nativo'
+        title: 'Listado nativo',
+        visible: true
       },
       component: () => import('@/pokemons/pages/PokemonListNative.vue')
     },
@@ -34,7 +37,8 @@ export const pokemonRoute:RouteRecordRaw = {
       name: 'pokemon-search',
       path: `/${ROUTE_NAME}/search`,
       props: {
-        title: 'Búsqueda'
+        title: 'Búsqueda',
+        visible: true
       },
       component: () => import('@/pokemons/pages/PokemonSearch.vue')
     }
