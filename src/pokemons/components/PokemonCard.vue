@@ -4,13 +4,12 @@ import type { Pokemon } from '../interfaces';
 import { useQueryClient } from '@tanstack/vue-query';
 import getPokemonById from '../helpers/get-pokemon-by-id';
 
-  const route = useRouter()
-  const queryClient = useQueryClient()
-
   interface Props {
     pokemon: Pokemon
   }
   const props = defineProps<Props>()
+  const route = useRouter()
+  const queryClient = useQueryClient()
 
   const goTo = () => {
     route.push({
@@ -21,9 +20,9 @@ import getPokemonById from '../helpers/get-pokemon-by-id';
     })
   }
 
-  const pokemonId = props.pokemon.id.toString()
-  const prefetchPokemon = async() => {
-    await queryClient.prefetchQuery({
+  const prefetchPokemon = () => {
+    const pokemonId = props.pokemon.id.toString()
+    queryClient.prefetchQuery({
       queryKey: ['pokemon', pokemonId],
       queryFn: () => getPokemonById(pokemonId),
     })
@@ -32,7 +31,7 @@ import getPokemonById from '../helpers/get-pokemon-by-id';
 </script>
 
 <template>
-  <div class="pokemon-card" @click="goTo" @onmouseenter="prefetchPokemon">
+  <div class="pokemon-card" @click="goTo" @mouseenter="prefetchPokemon">
     <img :src="pokemon.frontSprite" :alt="pokemon.name" />
     <p>{{ pokemon.name }}</p>
   </div>
